@@ -1,0 +1,22 @@
+<h2>Billing</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.billID}}</span> ${{hero.cost}}
+  </li>
+</ul>
+
+<div *ngIf="selectedHero">
+
+  <h2>Billing ID {{selectedHero.billID}} Details</h2>
+  <div><span>Billing ID: </span>{{selectedHero.billID}}</div>
+  <div><span>Street: </span>{{selectedHero.street}}</div>
+  <div><span>City: </span>{{selectedHero.city}}</div>
+  <div><span>State: </span>{{selectedHero.state}}</div>
+  <div><span>Zip: </span>{{selectedHero.zip}}</div>
+  <div><span>Cost: $</span>{{selectedHero.cost}}</div>
+  <div><span>Customer ID: </span>{{selectedHero.custID}}</div>
+  <div><span>Project ID: </span>{{selectedHero.projID}}</div>
+
+</div>
